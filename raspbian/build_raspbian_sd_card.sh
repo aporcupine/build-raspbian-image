@@ -174,7 +174,7 @@ LANG=C chroot ${rootfs} /debootstrap/debootstrap --second-stage
 
 mount ${bootp} ${bootfs}
 
-echo "deb ${deb_local_mirror} ${deb_release} main contrib non-free
+echo "deb ${deb_local_mirror} ${deb_release} main contrib non-free rpi
 " > etc/apt/sources.list
 
 echo "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait" > boot/cmdline.txt
@@ -228,7 +228,7 @@ rm -f third-stage
 chmod +x third-stage
 LANG=C chroot ${rootfs} /third-stage
 
-echo "deb ${deb_mirror} ${deb_release} main contrib non-free
+echo "deb ${deb_mirror} ${deb_release} main contrib non-free rpi
 " > etc/apt/sources.list
 
 echo "#!/bin/bash
